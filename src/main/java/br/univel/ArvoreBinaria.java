@@ -47,4 +47,16 @@ public class ArvoreBinaria {
 			}
 		}
 	}
+	public void percorrerPreOrdem(){
+		if(this.raiz == null){
+			System.out.println("Erro: Arvore Vazia");
+			return;
+		}
+		System.out.println("Valor: "+ this.raiz.getValor());
+		
+		if(this.arvoreEsquerda != null){
+			this.arvoreEsquerda.percorrerPreOrdem();
+		}
+		
+	}
 }
