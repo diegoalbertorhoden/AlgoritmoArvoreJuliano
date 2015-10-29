@@ -57,6 +57,9 @@ public class ArvoreBinaria {
 		if(this.arvoreEsquerda != null){
 			this.arvoreEsquerda.percorrerPreOrdem();
 		}
+		if(this.arvoreDireita != null){
+			this.arvoreDireita.percorrerPreOrdem();
+		}
 		
 	}
 }

@@ -36,7 +36,7 @@ public class ArvoreControle {
 				
 			case 2:
 				System.out.println("\n\n");
-//				arvoreBinaria.percorrerPreOrdem();
+				arvoreBinaria.percorrerPreOrdem();
 				System.out.println("\n\n");
 				this.menu();
 				break;				
