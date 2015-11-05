@@ -8,22 +8,49 @@ public class ArvoreBinaria {
 
 	//subclasse No
 	public class No{
-		private int valor;
+		private Pessoa pessoa;
 		//construtor...		
-		public No(int valor){
-			this.setValor(valor);
+		public No(Pessoa p){
+			this.setPessoa(p);
 		}
 		//getters and setters		
-		public int getValor() {
-			return valor;
+		public Pessoa getPessoa() {
+			return pessoa;
 		}
-		public void setValor(int valor) {
-			this.valor = valor;
+		public void setPessoa(Pessoa pessoa) {
+			this.pessoa = pessoa;
 		}		
 	}
+	
+	public class Pessoa{
+		int cpf;
+		String nome;
+		
+		public Pessoa(int cpf, String nome){
+			
+		}
+
+		public int getCpf() {
+			return cpf;
+		}
+
+		public void setCpf(int cpf) {
+			this.cpf = cpf;
+		}
+
+		public String getNome() {
+			return nome;
+		}
+
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+	}
+	
 	//metodo e instancia da subclasse No
-	public void insereNo(int valor){
-		No no = new No(valor);
+	public void insereNo(int cpf, String nome){
+		Pessoa p = new Pessoa(cpf, nome);
+		No no = new No(p);
 		this.inserir(no);
 	}
 	//metodo recursivo que será chamado n vezes até que seja satisfeita a condição.
@@ -33,13 +60,13 @@ public class ArvoreBinaria {
 		if( this.raiz == null){
 			this.raiz = no;
 		}else{
-			if(no.getValor()< this.raiz.getValor()){
+			if(no.getPessoa()< this.raiz.getPessoa()){
 				if( this.arvoreEsquerda == null)
 					this.arvoreEsquerda = new ArvoreBinaria();
 				//recursão... muito loco...
 				this.arvoreEsquerda.inserir(no);				
 
-			}else if(no.getValor()> this.raiz.getValor()){
+			}else if(no.getPessoa()> this.raiz.getPessoa()){
 				if( this.arvoreDireita == null)
 					this.arvoreDireita = new ArvoreBinaria();
 				
@@ -52,7 +79,7 @@ public class ArvoreBinaria {
 			System.out.println("Erro: Arvore Vazia");
 			return;
 		}
-		System.out.println("Valor: "+ this.raiz.getValor());
+		System.out.println("Valor: "+ this.raiz.getPessoa());
 		
 		if(this.arvoreEsquerda != null){
 			this.arvoreEsquerda.percorrerPreOrdem();
